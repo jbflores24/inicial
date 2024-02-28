@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>..:: Editar ::..</title>
+</head>
+<body>
+    <main>
+        <h1>Página de Edición de Usuario</h1>
+        <form action="">
+            <fieldset>
+                <div>
+                    <label>Nombre : </label>
+                    <input  type = "text" 
+                            placeholder="Etiqueta por default"
+                            name="txtNombre"
+                            id="txtNombre"
+                            required>
+                </div>
+                <div>
+                    <label>apellidos : </label>
+                    <input  type = "text" 
+                            placeholder="Aquí van los apellidos"
+                            name="txtApellido"
+                            id="txtApellido">
+                </div>
+                <div>
+                    <label>edad : </label>
+                    <input  type = "number" 
+                            placeholder="Edad"
+                            name="txtEdad"
+                            id="txtEdad">
+                </div>
+                <div>
+                    <label>email : </label>
+                    <input  type = "email" 
+                            placeholder="Aquí va el correo"
+                            name="txtEmail"
+                            id="txtEmail"
+                            value = "jbflores24@hotmail.com"
+                            >
+                </div>
+                <div>
+                    <label>Carrera : </label>
+                    <select name = "carrera" id = "carrera">
+                        <option value = "0">- Seleccione -</option>
+                        <option value = "1">Ing. en Acuicultura</option>
+                        <option value = "2">Ing. Mecánica</option>
+                        <option value = "3" selected>Ing. Electrónica</option>
+                        <option value = "4">Ing. Química</option>
+                    </select>
+                </div>
+                <input type="submit" value="Guardar">
+                <div>
+                    <button onclick="guardar()">Guardar</button>
+                    <button onclick="cancelar('Gracias por tu visita')">Cancelar</button>
+                </div>
+            </fieldset>
+        </form>
+    </main>
+    <script>
+        function guardar(){
+            /*alert ('Pulsaste el botón de guardar');*/
+            var nombre = document.getElementById('txtNombre').value;
+            let apellidos = document.getElementById('txtApellido').value;
+            let edad = document.getElementById('txtEdad').value;
+            let email = document.getElementById('txtEmail').value;
+            let carrera = document.getElementById('carrera').value;
+            let nombre_carrera='';
+            /*alert ("El nombre es : " + nombre);
+            alert ('El nombre es : ' + nombre);*/
+            edad = "Hola";
+            edad = 20;
+            alert (edad);
+            return 0;   
+            if (nombre === ''){
+                for (i = 1; i<=5; i++){
+                    alert ('Ahi dice que debes escribir el nombre, pon atención!');
+                }
+                return 0;
+            } else {
+                if (apellidos === ''){
+                    alert ('No escribiste los apellidos');
+                    return 0;
+                }
+            }
+            if (edad == ''){
+                alert ('No escribiste la edad');
+                return 0;
+            }
+            if (email === ''){
+                alert ('No escribiste el correo');
+                return 0;
+            }
+            if (carrera == 0){
+                alert ("Debes seleccionar una carrera")
+                return 0
+            }
+            switch (carrera) {
+                case 1: nombre_carrera='Ing.en Acuicultura'; 
+                break;
+            }
+            console.log(nombre);
+            alert (`El nombre es : ${ nombre } ${apellidos}\nLa edad es : ${edad}\nEl correo es : ${email}\nLa carrera es : ${carrera}`);
+        }
+
+        cancelar = function(mensaje){
+            alert (`${mensaje}`);
+            window.location.href = 'http://127.0.0.1:5500/opcion1.html';
+        }
+    </script>
+</body>
+</html>
